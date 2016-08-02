@@ -31,7 +31,8 @@
     }
 
     &.is-menu-sticky{
-      background-color: #fff !important;
+      background-color: #fff;
+      max-height: 64px;
 
       &:after{
         content: '';
@@ -42,7 +43,11 @@
         background-image: linear-gradient(to bottom, #f9f9f9 0%, #fff 100%);
       }
 
-      .navbar-brand{
+      @include media('<tablet') {
+        max-height: 85px;
+      }
+
+      a.navbar-brand{
 
         @include media('>tablet'){
           height: 64px;
@@ -50,7 +55,7 @@
         }
 
         @include media('<tablet'){
-          padding-top: 28px !important;
+          padding-top: 28px;
           height: auto;
         }
       }
@@ -63,6 +68,23 @@
 
           .icon-bar{
            background-color: $text-darker;
+          }
+
+          // burger animation
+          .icon-bar {
+            position: relative;
+            transition: all .2s ease-in-out;
+          }
+          &.active .icon-bar:nth-of-type(2) {
+            top: 12px;
+            transform: rotate(45deg);
+          }
+          &.active .icon-bar:nth-of-type(3) {
+            background-color: transparent;
+          }
+          &.active .icon-bar:nth-of-type(4) {
+            top: -12px;
+            transform: rotate(-45deg);
           }
         }
       }
@@ -130,8 +152,8 @@
       height: 100vh;
       border: none;
 
-      ul > li > a{
-        padding: 10px !important;
+      ul.navbar-nav > li > a{
+        padding: 10px;
         text-align: center;
         @include font-size($font-size-22);
         @include font-weight($font-light);
@@ -150,47 +172,4 @@
       }
     }
   }
-}
-
-.navbar-brand {
-  padding: 0 15px;
-  height: 104px;
-  line-height: 104px !important;
-}
-
-.navbar.is-menu-sticky, .is-menu-sticky .navbar {
-  max-height: 64px !important;
-  background-color: transparent !important;
-
-  @include media('<tablet') {
-    max-height: 85px !important;
-  }
-}
-nav.navbar-brand {
-  padding: 0 15px;
-  min-height: 64px;
-  height: 64px;
-  line-height: 64px !important;
-}
-
-// burger animation
-.navbar-toggle .icon-bar {
-  position: relative;
-  transition: all .2s ease-in-out;
-}
-.navbar-toggle.active .icon-bar:nth-of-type(1) {
-  background-color: transparent !important;
-}
-
-.navbar-toggle.active .icon-bar:nth-of-type(2) {
-  top: 12px;
-  transform: rotate(45deg);
-}
-.navbar-toggle.active .icon-bar:nth-of-type(3) {
-  background-color: transparent !important;
-}
-
-.navbar-toggle.active .icon-bar:nth-of-type(4) {
-  top: -12px;
-  transform: rotate(-45deg);
 }
