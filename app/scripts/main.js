@@ -46,4 +46,22 @@ $(function () {
   });
 });
 
+/**
+ * horizontally align 'Try now' buttons in Pricing section
+ */
 
+$(window).on('load resize',function(){
+  var pricingDesc = $('.pricing-desc'),
+      selectorAnnually = $('.annually'),
+      monthlyHeight = $('.monthly').find(pricingDesc).height(),
+      annuallyHeight = selectorAnnually.find(pricingDesc).height(),
+      annually = selectorAnnually.find(pricingDesc),
+      windowSize = $(this).width();
+  if ( windowSize < 350 ){
+    if ( annuallyHeight >  monthlyHeight){
+      annually.addClass('remove-margin');
+    }
+  }
+  else
+    annually.removeClass('remove-margin');
+});
