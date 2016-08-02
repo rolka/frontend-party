@@ -1,18 +1,19 @@
-var mainSectionHeight = $('.t-main').height();
-var tNavBar = $('.t-navbar');
+/**
+ * sticky menu
+ */
+
+$(window).on('load scroll',function(){
+  var mainSectionHeight = $('.t-main').height(),
+      tNavBar = $('.t-navbar');
+  if ($(this).scrollTop() > mainSectionHeight){
+    tNavBar.addClass(' is-menu-sticky');
+  }
+  else{
+    tNavBar.removeClass('is-menu-sticky');
+  }
+});
 
 $(function () {
-
-  function stickyHeader() {
-    if ($(this).scrollTop() > mainSectionHeight){
-      tNavBar.addClass('animated slideOutDown is-menu-sticky');
-    }
-    else{
-      tNavBar.removeClass('animated slideOutDown is-menu-sticky');
-    }
-  }
-
-  stickyHeader();
 
   $('body').scrollspy({target: '.navbar', offset: -100});
 
@@ -45,14 +46,4 @@ $(function () {
   });
 });
 
-//
 
-$(window).scroll(function() {
-  var navbar = $('.t-navbar');
-  if ($(this).scrollTop() > mainSectionHeight){
-    navbar.addClass('animated slideInDown is-menu-sticky');
-  }
-  else{
-    navbar.removeClass('animated slideOutDown is-menu-sticky');
-  }
-});
