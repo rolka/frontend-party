@@ -1,0 +1,63 @@
+.t-features{
+
+  padding-top: 100px;
+
+  @include media('<tablet') {
+    margin-top: 40px;
+  }
+
+  section{
+    @include media('>tablet') {
+      .row:nth-child(2){
+        margin-bottom: 87px;
+      }
+    }
+
+    @include media('>tablet'){
+      .row:nth-child(3){
+        margin-bottom: 127px;
+      }
+    }
+  }
+
+  h1{
+    @include font-size($main-header-size);
+    @include font-weight($font-light);
+    margin-bottom: 37px;
+
+    @include media('<tablet') {
+      @include font-size($font-size-50);
+    }
+  }
+
+  h2{
+    @include font-size($font-size-18);
+    @include font-weight($font-light);
+    margin-bottom: 84px;
+
+    @include media('<tablet') {
+      @include font-size($font-size-32);
+    }
+  }
+
+  article{
+
+    @include media('<tablet') {
+      text-align: center;
+      margin-bottom: 123px;
+    }
+
+    h1{
+      @include font-size($font-size-16);
+      @include font-weight($font-normal);
+      color: $text-darker;
+      margin-top: 25px;
+      margin-bottom: 15px;
+    }
+    p{
+      @include font-size($font-size-16);
+      @include font-weight($font-light);
+      color: $text-light;
+    }
+  }
+}

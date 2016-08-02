@@ -1,0 +1,131 @@
+.t-pricing{
+
+  background: url("../../images/pricing-bg.jpg") no-repeat center center fixed;
+  background-size: cover;
+  height: 790px;
+  color: $white;
+
+  @include media('<tablet') {
+    background: url("../../images/pricing-bg-mobile.jpg") no-repeat center fixed;
+    background-size: cover;
+  }
+
+  h1{
+    @include font-weight($font-light);
+    @include font-size($pricing-header-size);
+    margin-top: 110px;
+    margin-bottom: 27px;
+  }
+  h2{
+    @include font-size($font-size-22){
+      margin-top: 0;
+      margin-bottom: 66px;
+    };
+    @include font-weight($font-light);
+  }
+
+  .pricing-tables-wrap{
+
+    margin-bottom: 60px;
+
+    > ul{
+      text-align: center;
+      padding-left: 0;
+      margin-bottom: 0;
+
+      > li{
+        list-style-type: none;
+        display: inline-block;
+        box-shadow: 0 15px 55px rgba(3,3,3,.2);
+        width: 260px;
+        height: 324px;
+        vertical-align: middle;
+        padding: 63px 0 47px;
+
+        @include media('<tablet') {
+          width: 49%;
+        }
+
+        &:first-child{
+          margin-right: 30px;
+
+          @include media('<tablet') {
+            margin-right: -4px;
+          }
+        }
+
+        > ul{
+          padding-left: 0;
+          > li{
+            list-style-type: none;
+          }
+        }
+
+        &.monthly{
+          border: 2px solid $pricing-border-color;
+          .pricing-price{
+          }
+        }
+        &.annually{
+          background-color: $white;
+
+          .pricing-price{
+            color: $text-darker;
+          }
+          .pricing-desc{
+            color: $text-light;
+          }
+        }
+      }
+
+      .pricing-icon{
+        margin-bottom: 20px;
+      }
+      .pricing-price{
+
+        @include font-weight($font-light);
+
+        .price-lg{
+          font-size: 36px;
+        }
+      }
+      .pricing-desc{
+        margin-bottom: 20px;
+        @include font-weight($font-light);
+      }
+      .pricing-action{
+        .t-green-button{
+          width: 113px;
+          //height: 44px;
+          padding: 12px 0;
+        }
+      }
+    }
+  }
+
+  .pricing-desc-bottom{
+
+    p{
+      @include font-weight($font-light);
+      @include media('<tablet') {
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+    }
+
+    .icon-inf{
+      background: url("../../images/infinity.png") no-repeat;
+      width: 36px;
+      height: 17px;
+      display: inline-block;
+      position: relative;
+      top: 2px;
+
+      @include media('<tablet') {
+        width: 100%;
+        background-position: center;
+        margin-bottom: 15px;
+      }
+    }
+  }
+}

@@ -1,0 +1,77 @@
+body{
+  font-family: 'Roboto', sans-serif;
+  padding: 0;
+  position: relative;
+}
+
+// variables
+
+  // colors
+  $white: #fff;
+  $green: #9fd533;
+  $green-hover: #afeb38;
+  $main-action-hover: #abda4d;
+
+  $color-blue: #080f30;
+
+  $text-dark: #999999;
+  $text-darker: #333440;
+  $text-darkey: #333333;
+  $text-darkey2: #666666;
+  $text-light: #999999;
+
+  $pricing-border-color: #444d64;
+  $striked-text-color: #ff6666;
+
+  $transition-duration: .2s;
+
+  // font sizes
+  $main-header-size: 54px;
+  $main-subheader-size: 20px;
+  $pricing-header-size: 60px;
+  $font-size-22: 22px;
+  $font-size-18: 18px;
+  $font-size-16: 16px;
+  $font-size-50: 50px;
+  $font-size-26: 26px;
+  $font-size-32: 32px;
+
+  // font weights
+  $font-light: 300;
+  $font-normal: 400;
+  $font-bold: 700;
+
+  // mixins
+  @mixin font-size($size) {
+    font-size: $size;
+    @content;
+  }
+  @mixin font-weight($weight){
+    font-weight: $weight;
+    @content;
+  }
+  @mixin transition($duration){
+    transition: all $duration;
+    @content;
+  }
+  @mixin animation-delay($delay){
+    animation-delay: $delay;
+    @content;
+  }
+
+  // media query breakpoints
+
+  $breakpoints: (
+    'phone': 320px,
+    'tablet': 768px,
+    'desktop': 1024px
+  ) !default;
+
+  // includes
+  @import "main-page";
+  @import "menu";
+  @import "general";
+  @import "features";
+  @import "pricing";
+  @import "footer";
+

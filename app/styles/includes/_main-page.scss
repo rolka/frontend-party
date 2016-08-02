@@ -1,0 +1,126 @@
+.t-main{
+  background: url("../../images/main-bg.jpg") no-repeat center center;
+  color: $white;
+  background-size: cover;
+  height: 100%;
+  min-height: 100vh;
+  position: relative;
+  width: 100%;
+  padding-top: 104px;
+  @include media('<tablet') {
+    background: url("../../images/main-bg-mobile.jpg") no-repeat center center;
+    background-size: cover;
+  }
+
+  h1{
+    @include font-size($main-header-size);
+    @include font-weight($font-light);
+    @include media('<tablet') {
+      text-align: center;
+      @include font-size($font-size-50);
+    }
+  }
+
+  h2{
+    font-size: $main-subheader-size;
+    @include font-weight($font-light);
+    line-height: 34px;
+
+    @include media('<tablet') {
+      text-align: center;
+      @include font-size($font-size-26);
+      line-height: 36px;
+    }
+  }
+
+  @include media('>=tablet') {
+    > .container:first-child{
+      position: absolute;
+      width: 100%;
+      left: 0;
+      right: 0;
+      height: 100vh;
+      top: 28%;
+    }
+  }
+
+  .main-wrap{
+    @include media('>tablet') {
+      margin-top: 30px;
+      overflow: hidden;
+
+      .main-action-wrap {
+        margin-top: 50px;
+      }
+
+      .text-wrap{
+        padding-top: 100px;
+      }
+    }
+
+    .main-action-wrap{
+      .t-green-button{
+        @include font-size($font-size-16);
+      }
+    }
+  }
+
+  .t-main-scroll-button{
+    box-shadow: 0 5px 15px rgba(3,3,3,.15);
+    border-radius: 100%;
+    width: 56px;
+    height: 56px;
+    padding: 20px 0px;
+    border: none;
+    position: relative;
+    top: -40px;
+
+    &:hover{
+      background-color: $white;
+      border: none;
+
+      .chevron-down{
+        background: url("../../images/chevron-down-hover.png") no-repeat;
+        width: 15px;
+        height: 10px;
+        display: inline-block;
+      }
+    }
+
+    .chevron-down{
+      background: url("../../images/chevron-down.png") no-repeat;
+      width: 15px;
+      height: 10px;
+      display: inline-block;
+    }
+  }
+
+  .main-action-wrap{
+    @include media('<tablet') {
+      text-align: center;
+      margin-bottom: 60px;
+      margin-top: 35px;
+    }
+  }
+
+  .phone-wrap{
+    @include animation-delay(0.5s);
+    @include media('>tablet') {
+      text-align: right;
+      img{
+        display: inline-block;
+      }
+    }
+
+    @include media('<tablet') {
+      text-align: center;
+      img{
+        width: 199px;
+        text-align: center;
+        display: inline-block;
+      }
+    }
+  }
+}
+
+

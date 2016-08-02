@@ -1,0 +1,49 @@
+footer{
+  height: 126px;
+
+  >.container{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  p{
+    color: $text-light;
+  }
+
+  .footer-copyright{
+    span{
+      color: $text-darkey;
+    }
+
+    @include media('<tablet') {
+      text-align: center;
+      line-height: 23px;
+    }
+
+    @include media('>tablet') {
+      float: left;
+    }
+  }
+
+  .footer-explore{
+
+    a{
+      @include transition($transition-duration);
+
+      &:hover{
+        color: #9fd533;
+        text-decoration: none;
+      }
+    }
+
+    @include media('<tablet') {
+      text-align: center;
+    }
+
+    @include media('>=tablet') {
+      float: right;
+      text-align: right;
+    }
+  }
+}

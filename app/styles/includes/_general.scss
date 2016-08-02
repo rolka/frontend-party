@@ -1,0 +1,36 @@
+@media (min-width: 1200px){
+  .container {
+    width: 1020px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .container {
+    max-width: 1020px;
+  }
+}
+
+.text-striked{
+  text-decoration: line-through;
+  color: $striked-text-color;
+}
+
+// green button
+
+.t-green-button{
+  background-color: $green;
+  border: none;
+  color: $white;
+  border-radius: 27px 28px 28px 27px/27px 27px 28px 28px;
+  width: 199px;
+  padding: 15px 0;
+  text-transform: uppercase;
+  font-weight: bold;
+  @include transition($transition-duration);
+
+  &:hover{
+    background-color: $green-hover;
+    color: $white;
+  }
+}
+
