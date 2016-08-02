@@ -5,10 +5,10 @@ $(function () {
 
   function stickyHeader() {
     if ($(this).scrollTop() > mainSectionHeight){
-      tNavBar.css('position', 'absolute').addClass('animated slideOutDown is-menu-sticky');
+      tNavBar.addClass('animated slideOutDown is-menu-sticky');
     }
     else{
-      tNavBar.css('position', 'fixed').removeClass('animated slideOutDown is-menu-sticky');
+      tNavBar.removeClass('animated slideOutDown is-menu-sticky');
     }
   }
 
@@ -50,9 +50,9 @@ $(function () {
 $(window).scroll(function() {
   var navbar = $('.t-navbar');
   if ($(this).scrollTop() > mainSectionHeight){
-    navbar.addClass('animated slideInDown is-menu-sticky').css('position', 'fixed');
+    navbar.addClass('animated slideInDown is-menu-sticky');
   }
   else{
-    navbar.removeClass('animated slideOutDown is-menu-sticky').css('position', 'absolute');
+    navbar.removeClass('animated slideOutDown is-menu-sticky');
   }
 });
